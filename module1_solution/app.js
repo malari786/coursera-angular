@@ -14,7 +14,7 @@ function LunchCheckController($scope,$filter,$window){
     };
     $scope.checkIfTooMuch= function(){
       if ($scope.lunchItems=='' || $scope.lunchItems=='undefined') {
-        $scope.message='Please Enter Data';
+        $scope.message='Please Enter Data first';
         //$window.alert('Please Enter Data');
 
   }
