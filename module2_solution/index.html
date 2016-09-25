@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingListCheckOff">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body >
+    <!--<h1>Custom Serivce</h1>
+    <div ng-controller="ShoppingListcontroller">
+      {{message()}}
+      <ul>
+      <li ng-repeat="item in ShoppingList">
+        {{item}}
+      </li>
+    </ul>
+    </div>
+<div ng-controller="ShoppingListcontroller">
+<input type="text" ng-model="search">
+<ul>
+
+
+      <li ng-repeat="item in ShoppingCart | filter : search">
+      {{$index+1}} {{item.quantity}} Boxe(s)  of {{item.item}}
+      </li>
+</ul>
+<input type="text" ng-model="newItemName">
+<input type="text" ng-model="newItemQuantity">
+<input type="button" ng-click="AddToList()" value="Add item to the List">
+    </div>-->
+
+<!-- <div ng-controller='ShoppingListServicecontroller as itemAdder'>
+  <input type="text" ng-model='itemAdder.quantity'>
+  <input type="text" ng-model='itemAdder.itemName'>
+  <input type="button" ng-click='itemAdder.addItem();' value="Add item to the List">
+
+</div> -->
+
+<!-- <div ng-controller='ShoppingListShowcontroller as showList'>
+  <ul>
+    <li ng-repeat='item in showList.items'>
+      {{item.quantity}} boxes of {{item.name}}
+    <input type="button" ng-click="showList.removeItem($index);" value="remove">
+    </li>
+  </ul>
+
+</div> -->
+
+
+<div ng-controller='ToBuyShoppingController  as showBuyList'>
+  <h3>To Buy </h3>
+  <ul>
+    <li ng-repeat='item in showBuyList.items'>
+      Buy {{item.quantity}}  {{item.name}}
+    <input type="button" ng-click="showBuyList.buyItem($index);" value="Bought">
+    </li>
+  </ul>
+<div ng-if='showBuyList.items.length==0' class="error">
+  <b>Everything is bought!</b>
+</div>
+</div>
+<hr>
+<div ng-controller='AlreadyBoughtShoppingController as ShowBoughtList'>
+  <h3> Already Bought</h3>
+  <ul>
+    <li ng-repeat='item in ShowBoughtList.items'>
+      Bought {{item.quantity}}  {{item.name}}
+
+    </li>
+  </ul>
+  <div ng-if='ShowBoughtList.items.length==0' class="error">
+    <b>Nothing bought yet.</b>
+  </div>
+</div>
+  </body>
+</html>
