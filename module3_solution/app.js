@@ -3,8 +3,8 @@
 angular.module('NarrowItDownApp',[])
 .controller('NarrowItDownController',NarrowItDownController)
 .directive('foundItems',FoundItems)
-.service('MenuSearchService',MenuSearchService);
-
+.service('MenuSearchService',MenuSearchService)
+.constant('ApiBasePath',"http://davids-restaurant.herokuapp.com");
 
 
 
@@ -84,8 +84,8 @@ swcont.found =[];
 
 }
 
-MenuSearchService.inject=['$http'];
-function MenuSearchService($http)
+MenuSearchService.inject=['$http','ApiBasePath'];
+function MenuSearchService($http,ApiBasePath)
 {
   var service = this;
   //service.message='hey there';
@@ -96,7 +96,7 @@ function MenuSearchService($http)
 
       method : 'GET',
       //url : ('http://davids-restaurant.herokuapp.com/categories.json')
-      url : ('http://davids-restaurant.herokuapp.com/menu_items.json')
+      url : (ApiBasePath +"/menu_items.json")
     }
 
 
@@ -110,7 +110,7 @@ function MenuSearchService($http)
     var response= $http({
 
       method : 'GET',
-      url : ('http://davids-restaurant.herokuapp.com/menu_items.json'),
+      url : (ApiBasePath +"/menu_items.json"),
       // params :{
       //
       //   category : criteria
