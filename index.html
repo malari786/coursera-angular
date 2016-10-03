@@ -1,21 +1,32 @@
 <!DOCTYPE html>
-<html ng-app="myFirstApp">
+<html ng-app="NarrowItDownApp">
   <head>
     <meta charset="utf-8">
+    <title></title>
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-
-    <title>My First Application</title>
   </head>
   <body>
-    <h1>Welcome to my first Angular Page</h1>
-    <div ng-controller="myFirstController">
-{{name}}
-{{sayGreetings()}}
-  <input type="text" ng-model="name">
-    </div>
-  <!--  <div ng-controller="myFirstController">
+<div ng-controller="NarrowItDownController  as swcont">
+ <input type="text" name="name" ng-model="swcont.message" value="" placeholder="Please enter exact Text to Search.">
+ <input type="button" ng-click=swcont.filterResult(swcont.message) name="name" value="Narrow It Down For Me!" >
 
-  </div>-->
+<ul>
+<found-items my-list='swcont'></found-items>
+
+</ul>
+
+<div>
+{{swcont.warning}}
+</div>
+
+
+
+ <!-- <ul>
+   <li ng-repeat='item in swcont.found'>
+  ({{item.short_name}}) {{item.description}} <input type="button" ng-click='swcont.removeItem($index);' name="name" value="Remove Me">
+   </li>
+ </ul> -->
+</div>
   </body>
 </html>
