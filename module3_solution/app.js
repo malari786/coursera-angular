@@ -64,7 +64,7 @@ swcont.found =[];
   swcont.menu_items=response.data.menu_items;
   console.log(criteria);
     swcont.warning='';
-    if(criteria!=undefined)
+    if(criteria!=undefined && criteria!='')
     {
 
       for ( var i=0;i<swcont.menu_items.length;i++)
