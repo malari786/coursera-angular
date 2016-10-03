@@ -76,6 +76,9 @@ swcont.found =[];
           console.log("Added");
         }
       }
+      if(swcont.found.length<=0){
+          swcont.warning='Nothing Found.';
+      }
     }
     else {
       swcont.warning='Nothing Found';
