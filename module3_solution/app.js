@@ -28,6 +28,7 @@ function FoundItems()
 NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService){
 var swcont= this;
+swcont.warning='';
 swcont.found  =[];
 
 
@@ -62,15 +63,24 @@ swcont.found =[];
   promise.then(function(response){
   swcont.menu_items=response.data.menu_items;
   console.log(criteria);
-    for ( var i=0;i<swcont.menu_items.length;i++)
+    swcont.warning='';
+    if(criteria!=undefined)
     {
 
-      if(swcont.menu_items[i].description.toLowerCase().indexOf(criteria.toLowerCase())>=0)
+      for ( var i=0;i<swcont.menu_items.length;i++)
       {
-        swcont.found.push(swcont.menu_items[i]);
-      console.log("Added");
+
+        if(swcont.menu_items[i].description.toLowerCase().indexOf(criteria.toLowerCase())>=0)
+        {
+          swcont.found.push(swcont.menu_items[i]);
+          console.log("Added");
+        }
       }
     }
+    else {
+      swcont.warning='Nothing Found';
+    }
+
 
   })
   .catch(function (error) {
