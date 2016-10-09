@@ -10,14 +10,14 @@
   $stateProvider
   .state('home',{
     url : '/',
-    templateUrl : '/template/home.html'
+    templateUrl : 'template/home.html'
 
 
   })
 
   .state('categories',{
     url : '/categories',
-    templateUrl :'/template/main-categories.template.html',
+    templateUrl :'template/main-categories.template.html',
     controller: 'MainCategoriesController as MCC',
     resolve : {
       items :
@@ -29,7 +29,7 @@
 
   .state('item',{
     url : '/items/{short_name}',
-    templateUrl :'/template/main-items.template.html',
+    templateUrl :'template/main-items.template.html',
     controller : 'MainItemsController as MIC',
     resolve : {
       items : ['$stateParams','MenuDataService', function ($stateParams,MenuDataService) {
