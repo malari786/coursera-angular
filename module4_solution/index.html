@@ -1,0 +1,55 @@
+
+<html  ng-app="MenuApp">
+  <head>
+    <meta charset="utf-8">
+    <script src="/lib/angular.min.js"></script>
+    <!-- <script src="angular-ui-router.min.js"></script> -->
+    <script src="/lib/angular-ui-router.min.js"></script>
+    <script src="menuapp.module.js"></script>
+    <script src="data.module.js"></script>
+    <!-- <script src="menuapp.controller.js"></script> -->
+    <script src="main-categories.component.js"></script>
+    <script src="main-items.component.js"></script>
+    <script src="categories.component.js"></script>
+    <script src="items.component.js"></script>
+
+    <script src="menudata.service.js"></script>
+    <script src="routes.js"></script>
+
+
+    <title></title>
+  </head>
+  <body>
+    <div class="tabs">
+
+    </div>
+    <ui-view></ui-view>
+
+   <!--<div ng-controller="MainCategoriesController as MCC">
+      <categories items='MCC.menu_items'>
+      </categories>
+      <items items='MCC.menu_items'></items>
+    </div>
+      <div ng-controller="MainItemsController as MIC">
+      <categories items='MIC.menu_items'>
+      </categories>
+      <items items='MIC.menu_items'></items>
+    </div> -->
+
+
+    <!-- <div ng-controller="MenuAppController as menu">
+      <input type="button" ng-click='menu.getAllCategories()' name="name" value="Hit Me!">
+      <categories items='menu.menu_items'>
+      </categories>
+      <items items='menu.menu_items'></items>
+    </div> -->
+
+
+
+
+    <!-- <div ng-controller='menuAppController as x'>
+      {{x.message}}
+    </div> -->
+
+  </body>
+</html>
