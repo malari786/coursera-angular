@@ -1,0 +1,27 @@
+<div align="center" ng-if='MyInfCtrl.myInf[0]!=null'>
+<!--input type="date" name="name" value="" -->
+  name : {{MyInfCtrl.myInf[0].name}}<br>
+  email :{{MyInfCtrl.myInf[0].email}}<br>
+  phone : {{MyInfCtrl.myInf[0].phone}}<br>
+  Favourite Menu : {{MyInfCtrl.myInf[0].favmenu}}
+</div>
+
+
+      <div align="center">
+        <div>{{MyInfCtrl.myInf[0].short_name}}</div>
+        <img class="img-responsive" width="250" height="150" ng-src="{{MyInfCtrl.basePath}}/images/{{MyInfCtrl.myInf[0].short_name}}.jpg" alt="{{MyInfCtrl.myInf[0].short_name}}">
+        <h3 class="menu-item-title">{{MyInfCtrl.myInf[0].menuitemname}}</h3>
+        <p class="menu-item-details">{{MyInfCtrl.myInf[0].description}}</p>
+      </div>
+
+
+
+
+
+
+<div align="center" ng-if='MyInfCtrl.myInf[0].short_name==null'>
+Not Signed Up Yet.
+    <a ui-sref="public.signup" >
+      <span class="glyphicon"></span><br class="hidden-xs"> Sign up Now!</a>
+
+</div>
