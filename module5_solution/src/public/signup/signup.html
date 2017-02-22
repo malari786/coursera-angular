@@ -8,7 +8,7 @@
       required
       minlength="4"
       ng-maxlength="10" fontcolor='black'>
-      {{ reg.user.username }}
+     
       <br>
       <span style="color:white"
         ng-if="(regForm.username.$error.minlength || regForm.username.$error.required) && regForm.username.$touched">
@@ -18,7 +18,7 @@
         Username must not be longer than 10 characters
       </span>
       <br>
-{{reg.x}}
+
     <input type="email" name="email" placeholder="Email"
       ng-model="reg.user.email"
       required><br>
